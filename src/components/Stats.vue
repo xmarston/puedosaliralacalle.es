@@ -86,6 +86,11 @@
         const summaryElement = document.querySelector('.summary')
         summaryElement.classList.add('zoomIn', 'animated')
         summaryElement.classList.remove('not-visible')
+
+        this.scrollSmoothly()
+      },
+      scrollSmoothly() {
+        window.scrollTo(0, document.body.scrollHeight)
       }
     }
   }
