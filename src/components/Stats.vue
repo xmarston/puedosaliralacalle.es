@@ -40,16 +40,16 @@
   <div class="stats-component">
     <div class="facts">
       <div class="fact total-cases element1">
-        <span>Casos totales</span> <span>{{ countryStats.cases }}</span>
+        <span>Casos totales</span><br><span>{{ countryStats.cases }}</span>
       </div>
       <div class="fact today-cases element2">
-        <span>Casos hoy</span> <span>{{ countryStats.todayCases }}</span>
+        <span>Casos hoy</span><br><span>{{ countryStats.todayCases }}</span>
       </div>
       <div class="fact total-deaths element3">
-        <span>Muertes totales</span> <span>{{ countryStats.deaths }}</span>
+        <span>Muertes totales</span><br><span>{{ countryStats.deaths }}</span>
       </div>
       <div class="fact today-deaths element4">
-        <span>Muertes hoy</span> <span>{{ countryStats.todayDeaths }}</span>
+        <span>Muertes hoy</span><br><span>{{ countryStats.todayDeaths }}</span>
       </div>
     </div>
     <div class="summary not-visible">
