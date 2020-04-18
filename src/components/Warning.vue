@@ -35,7 +35,7 @@
     data: () => {
       return {
         COUNTRY: 'Spain',
-        COVID19_STATS_URL: 'https://corona.lmao.ninja/countries',
+        COVID19_STATS_URL: 'https://corona.lmao.ninja/v2/countries',
         countryStats: {}
       }
     },
