@@ -29,7 +29,7 @@
     font-size: 42px;
   }
 
-  .summary .definitely-no {
+  .summary .big-response {
     font-size: 72px;
   }
 
@@ -54,7 +54,7 @@
     </div>
     <div class="summary not-visible">
       <p>Viendo estos números sobre el COVID-19 en España, ¿tú que crees?</p>
-      <p class="definitely-no">No.</p>
+      <p class="big-response">{{ bigResponse }}</p>
     </div>
   </div>
 
@@ -67,6 +67,11 @@
     props: {
       countryStats: Object
     },
+    data: () => {
+      return {
+        bigResponse: 'No'
+      }
+    },
     mounted() {
       setTimeout(() => {
         const itemsLenght = 3
@@ -77,6 +82,8 @@
           const element = document.querySelector(`.${elementClass}${num}`)
           element.classList.add('animated', 'zoomIn', 'visible')
         }
+
+        this.analyzeDataToUpdateBigResponse()
 
         setTimeout(this.showSummary, 1000)
       }, 1000)
@@ -91,6 +98,11 @@
       },
       scrollSmoothly() {
         window.scrollTo(0, document.body.scrollHeight)
+      },
+      analyzeDataToUpdateBigResponse() {
+        if (this.countryStats.todayCases === 0 && this.countryStats.todayDeaths === 0 && this.countryStats.cases < 500) {
+          this.bigResponse = "¡¡Sí!!"
+        }
       }
     }
   }
